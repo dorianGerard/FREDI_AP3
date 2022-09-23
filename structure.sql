@@ -53,7 +53,7 @@ CREATE TABLE UTILISATEUR(
 
 CREATE TABLE ADHERENT(
         idutil       Int NOT NULL ,
-        idadherent   Int  Auto_increment  NOT NULL ,
+        idadherent   Int NOT NULL ,
         numls        Varchar (50) NOT NULL ,
         adresseadh   Varchar (150) NOT NULL ,
         pseudoutil   Varchar (25) NOT NULL ,
@@ -94,7 +94,7 @@ CREATE TABLE NOTE(
         idnote      Int  Auto_increment  NOT NULL ,
         indvalidite Varchar (25) NOT NULL ,
         dateremise  Date NOT NULL ,
-        numremise   Int  Auto_increment  NOT NULL ,
+        numremise   Int NOT NULL ,
         idutil      Int NOT NULL ,
         idperiode   Int NOT NULL
 	,CONSTRAINT NOTE_PK PRIMARY KEY (idnote)
