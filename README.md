@@ -4,7 +4,7 @@
 
 ## 🔍 - Vous y trouverez :
 
-* le site en lui-même en HTML/CSS/PHP
+* Le site en lui-même en HTML/CSS/PHP
 * La base de donnée, ses données associées, ainsi que des screenshots des MCD/MLD
 * L'IHM en diffèrents formats, crée avec Balsamiq
 
