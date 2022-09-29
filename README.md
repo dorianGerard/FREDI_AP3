@@ -1,10 +1,12 @@
-# 🏠 - Maison des Ligues: <b>Fredi</b>
+# 🏠 - Maison des Ligues: Fredi
 
 -----
 
 ## 🔍 - Vous y trouverez :
 
-* La base de donnée, ses donnée associées, ainsi que des screenshots des MCD/MLD
+* le site en lui-même en HTML/CSS/PHP
+* La base de donnée, ses données associées, ainsi que des screenshots des MCD/MLD
+* L'IHM en diffèrents formats, crée avec Balsamiq
 
 -----
 
@@ -13,5 +15,3 @@
 <p align="center">
   <img src="https://github.com/dorianGerard/FREDI_AP3/blob/main/DataBase/Capture%20MCD.PNG">
 </p>
-
------
