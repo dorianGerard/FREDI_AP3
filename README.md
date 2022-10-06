@@ -13,9 +13,11 @@
 
 ## 🖼️ - Trello :
 
-<a href="https://trello.com/b/ds9X1op6/to-do">
-  Lien vers le Trello du projet
-</a>
+<p>
+  <a href="https://trello.com/b/ds9X1op6/to-do">
+    Lien 
+  </a>vers le Trello du projet
+</p>
 
 -----
 
