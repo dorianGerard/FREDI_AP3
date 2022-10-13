@@ -24,5 +24,5 @@
 ## 📃 - MCD de la BDD :
 
 <p align="center">
-  <img src="https://github.com/dorianGerard/FREDI_AP3/blob/main/DataBase/Capture%20MCD.PNG">
+  <img src="https://github.com/dorianGerard/FREDI_AP3/blob/main/BDD/MCD/Capture%20MCD.PNG?raw=true">
 </p>
