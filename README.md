@@ -33,3 +33,16 @@
   <li>2 = Controleur</li>
   <li>3 = Admin</li>
 </ul>
+
+## Utilisateur dans la BDD
+
+Pseudo     | Mot de passe    | Email                 | Nom      | Prenom   | Nb Role
+           |                 |                       |          |          |
+Darksasuke | Q8h6ntA5BVHPwjd | Darksasuke@gmail.com  | Richard  | Cuterrie | 1
+Poney123   | xiYaaVhauuBj4Oc | Poney123@gmail.com    | Henry    | Car      | 1
+DocteurSol | OrpSP3hdwJVJuF6 | DocteurSol@gmail.com  | Khaoutar | Tiflette | 1
+SISRcNUL   | 5gcFm9XbyJ6sNqP | SISRcNUL@gmail.com    | Jean     | Bonbeur  | 2
+JaimelaM2L | TKX90MBx8c1bMi4 | JaimelaM2L@gmail.com  | Ibrhima  | Carronie | 1
+FouBrave   | 5cYqqgMn3unc9tA | FouBrave@gmail.com    | Angélica | Kahuète  | 1
+GoodRiku   | OBZvDPjCrNMVrfw | GoodRiku@gmail.com    | Oscar    | Got      | 2
+CookieVif  | jsA05o8nN80NJuS | CookieVif@gmail.com   | Vladimir | Aclette  | 1
