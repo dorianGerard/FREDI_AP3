@@ -26,3 +26,10 @@
 <p align="center">
   <img src="https://github.com/dorianGerard/FREDI_AP3/blob/main/BDD/MCD/Capture%20MCD.PNG?raw=true">
 </p>
+
+## Role utilisateur
+<ul>
+  <li>1 = User</li>
+  <li>2 = Controleur</li>
+  <li>3 = Admin</li>
+</ul>
