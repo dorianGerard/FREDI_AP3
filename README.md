@@ -27,14 +27,20 @@
   <img src="https://github.com/dorianGerard/FREDI_AP3/blob/main/BDD/MCD/Capture%20MCD.PNG?raw=true">
 </p>
 
-## Role utilisateur
+-----
+
+## 🧑‍🤝‍🧑 - Utilisateurs
+
+Role utilisateur
+
 <ul>
   <li>1 = User</li>
   <li>2 = Controleur</li>
   <li>3 = Admin</li>
 </ul>
 
-## Utilisateur dans la BDD
+Utilisateur dans la BDD
+
 <table>
   <tr><th>Pseudo</th><th>Mot de passe</th><th>Email</th><th>Prénom</th><th>Nom</th><th>Nb Role</th></tr>
   <tr><td>Darksasuke</td><td>Q8h6ntA5BVHPwjd</td><td>Darksasuke@gmail.com</td><td>Richard</td><td>Cuterrie</td><td>1</td></tr>
@@ -46,3 +52,13 @@
   <tr><td>GoodRiku</td><td>OBZvDPjCrNMVrfw</td><td>GoodRiku@gmail.com</td><td>Oscar</td><td>Got</td><td>2</td></tr>
   <tr><td>CookieVif</td><td>jsA05o8nN80NJuS</td><td>CookieVif@gmail.com</td><td>Vladimir</td><td>Aclette</td><td>1</td></tr>
 </table>
+
+-----
+
+## 📑 - Note de frais: JSON
+
+Pour récupérer les note de frais:
+[...]/frais_JSON.php?email=Darksasuke@gmail.com&password=Q8h6ntA5BVHPwjd
+
+Exemple:
+http://localhost/projects/AP/Fredi/LE_SITE_WEB/frais_JSON.php?email=Darksasuke@gmail.com&password=Q8h6ntA5BVHPwjd
