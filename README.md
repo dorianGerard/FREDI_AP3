@@ -39,7 +39,7 @@
   <li>3 = Admin</li>
 </ul>
 
-### Utilisateur dans la BDD
+### Utilisateurs dans la BDD
 
 <table>
   <tr><th>Pseudo</th><th>Mot de passe</th><th>Email</th><th>Prénom</th><th>Nom</th><th>Nb Role</th></tr>
