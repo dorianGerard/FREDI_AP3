@@ -103,9 +103,8 @@ $row = $result->fetchall(PDO::FETCH_ASSOC);
 
                 if ($_SESSION['roleid'] === 1) {
                     echo "<td>";
-                    echo "<form action='./CRUD_Ligne/addFraisLigne.php' method='POST'>";
-                    echo "<input type='text' name='id_note' style='display:none;' value='" . $rows['id_note'] . "'>";
-                    echo "<input type='text' name='id_motif' style='display:none;' value='" . $rows['id_motif'] . "'>";
+                    echo "<form action='./CRUD_Ligne/addFraisLigne.php?id_note=" . $rows['id_note'] . "' method='POST'>";
+                    echo "<input type='text' name='idLigne' style='display:none;' value='" . $rows['id_ligne'] . "'>";
                     echo "<input name='add' Value='Ajouter' type='submit'/>";
                     echo "</form>";
                     echo "</td>";
@@ -118,7 +117,7 @@ $row = $result->fetchall(PDO::FETCH_ASSOC);
                     echo "</td>";
 
                     echo "<td>";
-                    echo "<form action='./CRUD_Ligne/deleteFraisLigne.php' method='POST'>";
+                    echo "<form action='./CRUD_Ligne/deleteFraisLigne.php?id_ligne=" . $rows['id_ligne'] . "' method='POST'>";
                     echo "<input type='text' name='idLigne' style='display:none;' value='" . $rows['id_ligne'] . "'>";
                     echo "<input name='Delete' Value='Supprimer' type='submit'/>";
                     echo "</form>";
@@ -131,6 +130,7 @@ $row = $result->fetchall(PDO::FETCH_ASSOC);
         ?>
     </table>
     <p>Ajouter une <a href="addFrais.php">note de frais</a></p>
+    <p>Obtenir le pdf <a href=" cumul_des_frais_pdf.php">du cumul des frais</a></p>
     <p>Aller à <a href="index.php">l'accueil</a></p>
 </body>
 
