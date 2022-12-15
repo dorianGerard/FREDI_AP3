@@ -6,8 +6,8 @@ $laDATA = db_connect();
 
 $submitDelete = isset($_POST['submitDelete']);
 
-$id_ligne = isset($_GET['id_ligne']) ? $_GET['id_ligne'] : NULL;
-// $id_ligne = isset($_POST['id_ligne']) ? trim($_POST['id_ligne']) : NULL;
+$id_ligne = isset($_POST['idLigne']) ? trim($_POST['idLigne']) : NULL;
+echo $id_ligne;
 
 $date = isset($_POST['Date']) ? trim($_POST['Date']) : NULL;
 $lib_trajet = isset($_POST['Nom']) ? trim($_POST['Nom']) : NULL;
