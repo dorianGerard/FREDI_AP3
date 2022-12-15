@@ -16,10 +16,6 @@
     } catch (PDOException $e) {
         die("<p>Erreur lors de la requête SQL : " . $e->getMessage() . "</p>");
     }
-    foreach ($rows as $row){
-        $role=$row['role'];
-    
-    }
     ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -48,7 +44,7 @@
             echo "<td class='UserList2'>".$row["nom"]."</td>";
             echo "<td class='UserList2'>".$row["mail"]."</td>";
             echo "<td class='UserList2'>".$row["pseudo"]."</td>";
-            echo "<td class='UserList2'>".$role."</td>";
+            echo "<td class='UserList2'>".$row['role']."</td>";
             echo "</tr>";
         }
     ?>
