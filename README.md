@@ -43,7 +43,7 @@
 
 <table>
   <tr><th>Pseudo</th><th>Mot de passe</th><th>Email</th><th>Prénom</th><th>Nom</th><th>Nb Role</th></tr>
-  <tr><td>Darksasuke</td><td>Q8h6ntA5BVHPwjd</td><td>Darksasuke@gmail.com</td><td>Richard</td><td>Cuterrie</td><td>2</td></tr>
+  <tr><td>Darksasuke</td><td>Q8h6ntA5BVHPwjd</td><td>Darksasuke@gmail.com</td><td>Richard</td><td>Cuterrie</td><td>1</td></tr>
   <tr><td>Poney123</td><td>xiYaaVhauuBj4Oc</td><td>Poney123@gmail.com</td><td>Henry</td><td>Car</td><td>1</td></tr>
   <tr><td>DocteurSol</td><td>OrpSP3hdwJVJuF6</td><td>DocteurSol@gmail.com</td><td>Khaoutar</td><td>Tiflette</td><td>1</td></tr>
   <tr><td>SISRcNUL</td><td>5gcFm9XbyJ6sNqP</td><td>SISRcNUL@gmail.com</td><td>Jean</td><td>Bonbeur</td><td>2</td></tr>
