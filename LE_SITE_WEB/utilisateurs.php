@@ -44,7 +44,17 @@
             echo "<td class='UserList2'>".$row["nom"]."</td>";
             echo "<td class='UserList2'>".$row["mail"]."</td>";
             echo "<td class='UserList2'>".$row["pseudo"]."</td>";
-            echo "<td class='UserList2'>".$row['role']."</td>";
+            switch ($row["role"]) {
+                case 1:
+                    echo "<td class='UserList2'>Utilisateur</td>";
+                    break;
+                case 2:
+                    echo "<td class='UserList2'>Contrôleur</td>";
+                    break;
+                case 3:
+                    echo "<td class='UserList2'>Administrateur</td>";
+                    break;
+            }
             echo "</tr>";
         }
     ?>
