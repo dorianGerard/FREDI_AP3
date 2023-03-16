@@ -51,8 +51,6 @@
   <tr><td>FouBrave</td><td>5cYqqgMn3unc9tA</td><td>FouBrave@gmail.com</td><td>Angélica</td><td>Kahuète</td><td>1</td></tr>
   <tr><td>GoodRiku</td><td>OBZvDPjCrNMVrfw</td><td>GoodRiku@gmail.com</td><td>Oscar</td><td>Got</td><td>2</td></tr>
   <tr><td>CookieVif</td><td>jsA05o8nN80NJuS</td><td>CookieVif@gmail.com</td><td>Vladimir</td><td>Aclette</td><td>1</td></tr>
-  <tr><td>Nodrain</td><td></td><td>dorian.gerard@limayrac.fr</td><td>Gerard</td><td>Dorian</td><td>3</td></tr>
-  <tr><td>Juki</td><td></td><td>juki@gmail.com</td><td>Thuot</td><td>Clément</td><td>1</td></tr>
 </table>
 
 -----
