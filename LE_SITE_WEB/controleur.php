@@ -110,30 +110,22 @@ foreach($periode as $periodes){
         </tr>
         <?php
         foreach ($row as $rows) {
+            if($rows['est_valide'] == '0') {
             echo "<tr class='UserList'>";
             echo "<td class='UserList2'>" . $rows['pseudo'] . "</td>";
             echo "<td class='UserList2'>" . $rows['id_note'] . "</td>";
-            switch ($rows['est_valide']) {
-                case 1:
-                    echo "<td class='UserList2'>Validée</td>";
-                    echo "<td class='UserList2'>" . $rows['mt_total'] . " </td>";
-                    echo "<td class='UserList2'>" . $rows['dat_remise'] . "</td>";
-                    echo "<td class='UserList2'>" . $rows['id_periode'] . "</td>";
-                    echo "</tr>";
-                    break;
-                case 0:
-                    echo "<td class='UserList2'>En attente de validation</td>";
-                    echo "<td class='UserList2'>" . $rows['mt_total'] . " </td>";
-                    echo "<td class='UserList2'>" . $rows['dat_remise'] . "</td>";
-                    echo "<td class='UserList2'>" . $rows['id_periode'] . "</td>";
-                    echo "<td>";
-                    echo "<form action='valider.php' method='POST'>";
-                    echo "<input type='submit' name='submitValider' value='Valider'>";
-                    echo "<input type='text' name='idnote' style='display:none;' value='" . $rows['id_note'] . "'>";
-                    echo "</form>";
-                    echo "</td>";
-                    echo "</tr>";
-                    break;
+            echo "<td class='UserList2'>En attente de validation</td>";
+            echo "<td class='UserList2'>" . $rows['mt_total'] . " </td>";
+            echo "<td class='UserList2'>" . $rows['dat_remise'] . "</td>";
+            echo "<td class='UserList2'>" . $rows['id_periode'] . "</td>";
+            echo "<td>";
+            echo "<form action='valider.php' method='POST'>";
+            echo "<input type='submit' name='submitDetails' value='Details'>";
+            echo "<input type='text' name='idnote' style='display:none;' value='" . $rows['id_note'] . "'>";
+            echo "</form>";
+            echo "</td>";
+            echo "</tr>";
+
             }
 
         }
