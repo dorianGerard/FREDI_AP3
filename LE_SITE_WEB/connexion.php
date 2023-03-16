@@ -56,7 +56,7 @@ if ($submit) {
         // Switch pour récupérer le Strings du role
         switch ($roleUtil['role']) {
             case 1:                     
-                $rolelib = "Utilisateur";
+                $rolelib = "Adhérent.";
                 break;
             case 2:                     
                 $rolelib = "Controleur";

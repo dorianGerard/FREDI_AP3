@@ -38,12 +38,14 @@ $row = $result->fetchall(PDO::FETCH_ASSOC);
 
 <body>
 
-
-Tableau des périodes:
+<br/>
+<p>Tableau des périodes:</p>
+<br/>
 <table class="UserList">
 <tr class="UserList">
 <th class="UserList2">Libellé de la période</th>
 <th class="UserList2">Etat de la période</th>
+<th class="UserList2">Autres</th>
 </tr>
 <?php
 $liste_periode="SELECT * from periode";
@@ -62,12 +64,39 @@ foreach($periode as $periodes){
             echo "<td class='UserList2'>Inactive</td>";
             break;
     }
+    echo "<td class='UserList2'><form action='periode.php' method='POST'><input type='submit' value='Activer' name='activePeriode'>";
+    echo "<input type='hidden' value='".$periodes['id_periode']."' name='idperiode'></form></td>";
     echo "</tr>";
 }
 ?>
 </table>
+<br/>
+<form action="periode.php" method="POST">
+    <input type="text" name="libPeriode" placeholder="Libellé Periode" required>
+    <br/>
+    <br/>
+    <input type="number" name="mtKmPeriode" placeholder="Montant par KM" required>
+    <br/>
+    <br/>
+    <input type="submit" value="Créer période" name="createPeriode">
+    <br/>
+    <br/>
+</form>
+
+
 <!-- On récupère la première occurence [0], ça fonctionne car seule une période est active à la fois -->
-Notes de frais de la <?php echo $row[0]['lib_periode'] ?>
+<br/>
+<br/>
+<?php
+
+    if(isset($row[0]['lib_periode']))
+    {
+        echo "<p>Notes de frais de la ".$row[0]['lib_periode']."</p>";
+    }
+
+?>
+
+<br/>
 <table>
     <table class="UserList">
         <tr class="UserList">
@@ -87,21 +116,26 @@ Notes de frais de la <?php echo $row[0]['lib_periode'] ?>
             switch ($rows['est_valide']) {
                 case 1:
                     echo "<td class='UserList2'>Validée</td>";
+                    echo "<td class='UserList2'>" . $rows['mt_total'] . " </td>";
+                    echo "<td class='UserList2'>" . $rows['dat_remise'] . "</td>";
+                    echo "<td class='UserList2'>" . $rows['id_periode'] . "</td>";
+                    echo "</tr>";
                     break;
                 case 0:
                     echo "<td class='UserList2'>En attente de validation</td>";
+                    echo "<td class='UserList2'>" . $rows['mt_total'] . " </td>";
+                    echo "<td class='UserList2'>" . $rows['dat_remise'] . "</td>";
+                    echo "<td class='UserList2'>" . $rows['id_periode'] . "</td>";
+                    echo "<td>";
+                    echo "<form action='valider.php' method='POST'>";
+                    echo "<input type='submit' name='submitValider' value='Valider'>";
+                    echo "<input type='text' name='idnote' style='display:none;' value='" . $rows['id_note'] . "'>";
+                    echo "</form>";
+                    echo "</td>";
+                    echo "</tr>";
                     break;
             }
-            echo "<td class='UserList2'>" . $rows['mt_total'] . " </td>";
-            echo "<td class='UserList2'>" . $rows['dat_remise'] . "</td>";
-            echo "<td class='UserList2'>" . $rows['id_periode'] . "</td>";
-            echo "<td>";
-            echo "<form action='valider.php' method='POST'>";
-            echo "<input type='submit' name='submit' value='Valider'>";
-            echo "<input type='text' name='idnote' style='display:none;' value='" . $rows['id_note'] . "'>";
-            echo "</form>";
-            echo "</td>";
-            echo "</tr>";
+
         }
         if ($submit) {
             echo    "</table>";
