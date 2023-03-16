@@ -34,7 +34,7 @@
 ### Role utilisateur
 
 <ul>
-  <li>1 = User</li>
+  <li>1 = Adherent</li>
   <li>2 = Controleur</li>
   <li>3 = Admin</li>
 </ul>
