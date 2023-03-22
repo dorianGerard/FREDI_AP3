@@ -64,7 +64,7 @@ foreach($periode as $periodes){
             echo "<td class='UserList2'>Inactive</td>";
             break;
     }
-    echo "<td class='UserList2'><form action='periode.php' method='POST'><input type='submit' value='Activer' name='activePeriode'>";
+    echo "<td class='UserList2'><form action='periode.php' method='POST'><input type='submit' class='button-3' value='Activer' name='activePeriode'>";
     echo "<input type='hidden' value='".$periodes['id_periode']."' name='idperiode'></form></td>";
     echo "</tr>";
 }
@@ -72,13 +72,13 @@ foreach($periode as $periodes){
 </table>
 <br/>
 <form action="periode.php" method="POST">
-    <input type="text" name="libPeriode" placeholder="Libellé Periode" required>
+    <input type="text" class="logCSS" name="libPeriode" placeholder="Libellé Periode" required>
     <br/>
     <br/>
-    <input type="number" name="mtKmPeriode" placeholder="Montant par KM" required>
+    <input type="number" class="logCSS" name="mtKmPeriode" placeholder="Montant par KM" required>
     <br/>
     <br/>
-    <input type="submit" value="Créer période" name="createPeriode">
+    <input type="submit" class="button-3" value="Créer période" name="createPeriode">
     <br/>
     <br/>
 </form>
@@ -120,7 +120,7 @@ foreach($periode as $periodes){
             echo "<td class='UserList2'>" . $rows['id_periode'] . "</td>";
             echo "<td>";
             echo "<form action='valider.php' method='POST'>";
-            echo "<input type='submit' name='submitDetails' value='Details'>";
+            echo "<input type='submit' class='button-3' name='submitDetails' value='Details'>";
             echo "<input type='text' name='idnote' style='display:none;' value='" . $rows['id_note'] . "'>";
             echo "</form>";
             echo "</td>";
