@@ -56,6 +56,7 @@ $row = $result->fetchall(PDO::FETCH_ASSOC);
             echo "<td>";
             echo "<form action='frais.php' method='POST'>";
             echo "<input class='button-3' type='submit' name='submit' value='Détail'>";
+            echo "<input type='hidden' name='estValide' value='".$rows['est_valide']."'>";
             echo "<input type='text' name='idnote' style='display:none;' value='" . $rows['id_note'] . "'>";
             echo "</form>";
             echo "</td>";
@@ -74,7 +75,7 @@ $row = $result->fetchall(PDO::FETCH_ASSOC);
             echo            "<th class='UserList2'>Montant Hébergement</th>";
             echo            "<th class='UserList2'>Total</th>";
             echo            "<th class='UserList2'>ID Motif</th>";
-            if ($_SESSION['roleid'] === 1) {
+            if ($_SESSION['roleid'] === 1 && $_POST['estValide'] == '0') {
                 echo "<th class='UserList2' colspan='3'>Autres</th>";
             }
             echo        "</tr>";
@@ -101,7 +102,7 @@ $row = $result->fetchall(PDO::FETCH_ASSOC);
                 echo "<td>" . $rows['mt_total'] . "</td>";
                 echo "<td>" . $rows['id_motif'] . "</td>";
 
-                if ($_SESSION['roleid'] === 1) {
+                if ($_SESSION['roleid'] === 1 && $_POST['estValide'] == '0') {
                     echo "<td>";
                     echo "<form action='./CRUD_Ligne/addFraisLigne.php?id_note=" . $rows['id_note'] . "' method='POST'>";
                     echo "<input type='text' name='idLigne' style='display:none;' value='" . $rows['id_ligne'] . "'>";
