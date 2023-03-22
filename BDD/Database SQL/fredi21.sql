@@ -21,7 +21,11 @@ SET time_zone = "+00:00";
 -- Database: `fredi21`
 --
 
--- --------------------------------------------------------
+CREATE DATABASE fredi21 DEFAULT CHARSET=utf8 COLLATE utf8_general_ci ;
+
+CREATE USER 'SELECTO'@'localhost' IDENTIFIED BY '$ùS3L3C7Où$';
+GRANT SELECT, INSERT, UPDATE, DELETE ON fredi21.* TO 'SELECTO'@'localhost';
+----------------------------------------
 
 --
 -- Table structure for table `adherent`
