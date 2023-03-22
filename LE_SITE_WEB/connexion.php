@@ -98,13 +98,16 @@ if ($submit) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
     <title>Portail de connexion FREDI</title>
 </head>
 <body>
-    <form action="<?php $_SERVER['PHP_SELF'] ?>" method=POST>
-    <p><br /><input name="pseudo" placeholder="Pseudo" id="pseudo" type="text" required /></p>
-    <p><br /><input name="mdp" placeholder="Mot de passe" id="mdp" type="password" required /></p>
-    <p><input type="submit" name="submit" value="Se connecter" />&nbsp;<input type="reset" value="Se créer un compte" /></p>
-  </form>
+    <div class="logCSS" style="margin-top: 15%;">
+        <form action="<?php $_SERVER['PHP_SELF'] ?>" method=POST>
+            <p><br /><input class="logCSS" name="pseudo" placeholder="Pseudo" id="pseudo" type="text" required /></p>
+            <p><br /><input class="logCSS" name="mdp" placeholder="Mot de passe" id="mdp" type="password" required /></p>
+            <p><input class="button-3" style="background-color: #ff895d;" type="submit" name="submit" value="Se connecter" />&nbsp;<input class="button-3" style="background-color: #ff895d;" type="reset" value="Se créer un compte" /></p>
+        </form>
+  </div>
 </body>
 </html>

@@ -18,8 +18,40 @@ if ($submit) {
     $mdp = isset($_POST['mdp']) ? trim($_POST['mdp']) : NULL;
     $confirmMDP = isset($_POST['confirmMDP']) ? trim($_POST['confirmMDP']) : NULL;
 
+    try {
+        $sql = "SELECT pseudo FROM utilisateur WHERE pseudo = :pseudo";
+        $result = $laDATA -> prepare($sql);
+        $result->execute(array(":pseudo"=>$username));
+        $testUsername = $result->fetch(PDO::FETCH_ASSOC);
+    } catch (PDOException $ex) {
+        die("Erreur lors de la requête SQL : " . $ex->getMessage());
+    }
+
+    if(isset($testUsername))
+    {
+        $testUsername = True;
+    } else {
+        $testUsername = False;
+    }
+
+    try {
+        $sql = "SELECT mail FROM utilisateur WHERE mail = :mail";
+        $result = $laDATA -> prepare($sql);
+        $result->execute(array(":mail"=>$email));
+        $row = $result->fetch(PDO::FETCH_ASSOC);
+    } catch (PDOException $ex) {
+        die("Erreur lors de la requête SQL : " . $ex->getMessage());
+    }
+
+    if(isset($testMail))
+    {
+        $testMail = True;
+    } else {
+        $testMail = False;
+    }
+
     // On vérifie que les 2 mots de passes rentrés concorde parfaitement
-    if ($mdp == $confirmMDP)
+    if ($mdp == $confirmMDP && $testUsername == False && $testMail == False)
     {
         // On hash le mot de passe et l'incère dans une nouvelle variable
         $mdpHash = password_hash($confirmMDP, PASSWORD_BCRYPT);
@@ -50,7 +82,17 @@ if ($submit) {
             die("Erreur lors de la requête SQL : " . $ex->getMessage());
         }
         
-    } else {
+    } 
+    
+    if($testMail == True)
+    {
+        echo "Cette adresse email existe déjà.";
+    }
+    if($testUsername == True)
+    {
+        echo "Ce nom d'utilisateur existe déjà.";
+    }
+    else {
         echo "Les mots de passe ne corresponde pas.";
     }
 }

@@ -44,7 +44,6 @@ $row = $result->fetchall(PDO::FETCH_ASSOC);
             <th class="UserList2">Montant Total</th>
             <th class="UserList2">Date Remise</th>
             <th class="UserList2">Numéro ordre</th>
-
         </tr>
         <?php
         foreach ($row as $rows) {
@@ -56,7 +55,7 @@ $row = $result->fetchall(PDO::FETCH_ASSOC);
             echo "<td class='UserList2'>" . $rows['id_periode'] . "</td>";
             echo "<td>";
             echo "<form action='frais.php' method='POST'>";
-            echo "<input type='submit' name='submit' value='Détail'>";
+            echo "<input class='button-3' type='submit' name='submit' value='Détail'>";
             echo "<input type='text' name='idnote' style='display:none;' value='" . $rows['id_note'] . "'>";
             echo "</form>";
             echo "</td>";
@@ -106,21 +105,21 @@ $row = $result->fetchall(PDO::FETCH_ASSOC);
                     echo "<td>";
                     echo "<form action='./CRUD_Ligne/addFraisLigne.php?id_note=" . $rows['id_note'] . "' method='POST'>";
                     echo "<input type='text' name='idLigne' style='display:none;' value='" . $rows['id_ligne'] . "'>";
-                    echo "<input name='add' Value='Ajouter' type='submit'/>";
+                    echo "<input class='button-3' name='add' Value='Ajouter' type='submit'/>";
                     echo "</form>";
                     echo "</td>";
 
                     echo "<td>";
                     echo "<form action='./CRUD_Ligne/editFraisLigne.php' method='POST'>";
                     echo "<input type='text' name='idLigne' style='display:none;' value='" . $rows['id_ligne'] . "'>";
-                    echo "<input type='submit' name='edit' Value='Modifier' />";
+                    echo "<input class='button-3' type='submit' name='edit' Value='Modifier' />";
                     echo "</form>";
                     echo "</td>";
 
                     echo "<td>";
                     echo "<form action='./CRUD_Ligne/deleteFraisLigne.php?id_ligne=" . $rows['id_ligne'] . "' method='POST'>";
                     echo "<input type='text' name='idLigne' style='display:none;' value='" . $rows['id_ligne'] . "'>";
-                    echo "<input name='Delete' Value='Supprimer' type='submit'/>";
+                    echo "<input class='button-3' name='Delete' Value='Supprimer' type='submit'/>";
                     echo "</form>";
                     echo "</td>";
                 }

@@ -54,32 +54,34 @@ try {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/styles.css">
     <title>Ajouter une note de frais</title>
 </head>
 <body>
-    <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
-    <p>Trajet : <input type="text" name="lib_trajet" required></p>
-    <p>Date : <input type="date" name="date_ligne" required></p>
-    <p>Nombre Km : <input type="text" name="nb_km"></p>
-    <p>Montant péage : <input type="text" name="mt_peage"></p>
-    <p>Montant repas : <input type="text" name="mt_repas"></p>
-    <p>Montant hebergement : <input type="text" name="mt_hebergement"></p>
-    <p>Motif : <select name="lib_motif" required>
-        <?php 
-            $sql = "SELECT * FROM motif";
-            $result = $laDATA -> prepare($sql);
-            $result->execute();
-            $row = $result->fetchAll(PDO::FETCH_ASSOC);
-            foreach($row as $rows)
-            {
-                echo "<option value='".$rows['id_motif']."'>".$rows['lib_motif']."</option>";
-            }
-        ?>
-        </select><br/>
-        <div class="BottonLa"><p><input type="submit" name="submit" value="Ajouter"> <input type="reset" value="Reset"> </p></div>
-    </form>
-    <p>Revenir au <a href="frais.php">note de frais</a></p>
-    <p>Revenir a <a href="index.php">l'accueil</a></p>
+    <div class="logCSS" style="margin-top: 11%;">
+        <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
+        <p>Trajet : <input class="logCSS" type="text" name="lib_trajet" required></p>
+        <p>Date : <input class="logCSS" type="date" name="date_ligne" required></p>
+        <p>Nombre Km : <input class="logCSS" type="text" name="nb_km"></p>
+        <p>Montant péage : <input class="logCSS" type="text" name="mt_peage"></p>
+        <p>Montant repas : <input class="logCSS" type="text" name="mt_repas"></p>
+        <p>Montant hebergement : <input class="logCSS" type="text" name="mt_hebergement"></p>
+        <p>Motif : <select name="lib_motif" required>
+            <?php 
+                $sql = "SELECT * FROM motif";
+                $result = $laDATA -> prepare($sql);
+                $result->execute();
+                $row = $result->fetchAll(PDO::FETCH_ASSOC);
+                foreach($row as $rows)
+                {
+                    echo "<option value='".$rows['id_motif']."'>".$rows['lib_motif']."</option>";
+                }
+            ?>
+            </select><br/>
+            <div class="BottonLa"><p><input class="button-3" style="background-color: #ff895d;" type="submit" name="submit" value="Ajouter"> <input class="button-3" style="background-color: #ff895d;" type="reset" value="Reset"> </p></div>
+        </form>  
+        <p>Revenir au <a href="frais.php">note de frais</a></p>
+        <p>Revenir a <a href="index.php">l'accueil</a></p>
+    </div>
 </body>
 </html>
