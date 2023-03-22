@@ -2,7 +2,7 @@
 
 function db_connect()
 {
-    $dsn = 'mysql:host=51.254.125.218;port=3306;dbname=fredi21';
+    $dsn = 'mysql:host=localhost;port=3306;dbname=fredi21';
     $user = 'SELECTO';
     $PW = '$ùS3L3C7Où$';
     try {
