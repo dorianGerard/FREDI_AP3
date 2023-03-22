@@ -13,6 +13,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styles.css">
     <title>Modifier Ligne</title>
 </head>
 <body>
@@ -52,6 +53,7 @@
     
     ?>
     <h1>Modifier une ligne</h1>
+    <p>Retourner à l'<a href="../index.php">accueil</a></p>
     <?php
     
     
@@ -70,13 +72,13 @@ try {
 }
 
 echo        "<form action='editFraisLigne.php' method='POST'>";
-echo            "<p>Date : <br/><input type='date' name='Date' value='".$row['date_ligne']."' required/></p>";
-echo            "<p>Trajet : <br/><input type='text' name='Nom' value='".$row['lib_trajet']."' required/></p>";
-echo            "<p>Nombre Kilomètre : <br/><input type='text' name='nbKm' value='".$row['nb_km']."' required/></p>";
-echo            "<p>Montant Péage : <br/><input type='text' name='mtPeage' value='".$row['mt_peage']."' required/></p>";
-echo            "<p>Montant Repas : <br/><input type='text' name='mtRepas' value='".$row['mt_repas']."'required/></p>";
-echo            "<p>Montant Hébergement : <br/><input type='text' name='mtHebergement' value='".$row['mt_hebergement']."' required/></p>";
-echo            "<p><br/><input type='submit' name='submitEdit' value='Envoyer' /><input type='text' name='idLigne' style='display:none;' value='".$idLigne."'></p>";
+echo            "<p>Date : <br/><input type='date' class='logCSS' name='Date' value='".$row['date_ligne']."' required/></p>";
+echo            "<p>Trajet : <br/><input type='text' class='logCSS' name='Nom' value='".$row['lib_trajet']."' required/></p>";
+echo            "<p>Nombre Kilomètre : <br/><input type='number' class='logCSS' name='nbKm' value='".$row['nb_km']."' required/></p>";
+echo            "<p>Montant Péage : <br/><input type='number' class='logCSS' name='mtPeage' value='".$row['mt_peage']."' required/></p>";
+echo            "<p>Montant Repas : <br/><input type='number' class='logCSS' name='mtRepas' value='".$row['mt_repas']."'required/></p>";
+echo            "<p>Montant Hébergement : <br/><input type='number' class='logCSS' name='mtHebergement' value='".$row['mt_hebergement']."' required/></p>";
+echo            "<p><br/><input type='submit' class='button-3' name='submitEdit' value='Envoyer' /><input type='text' name='idLigne' style='display:none;' value='".$idLigne."'></p>";
 echo        "</form>";
 echo        "<p>Retourner aux <a href='../frais.php'>notes de frais</a><p/>";
 echo        "<p>Retourner a <a href='../index.php'>l'accueil</a><p/>";

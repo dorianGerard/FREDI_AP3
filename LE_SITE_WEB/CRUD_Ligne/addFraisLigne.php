@@ -65,20 +65,21 @@ if ($submitAdd) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styles.css">
     <title>Ajouter Ligne</title>
 </head>
 
 <body>
     <h1>Ajouter une ligne</h1>
-
+    <p>Retourner à l'<a href="../index.php">accueil</a></p>
     <form action='addFraisLigne.php' method='POST'>
-        <p>Date : <br /><input type='date' name='Date' required /></p>
-        <p>Trajet : <br /><input type='text' name='Nom' required /></p>
-        <p>Nombre Kilomètre : <br /><input type='text' name='nbKm' required /></p>
-        <p>Montant Péage : <br /><input type='text' name='mtPeage' required /></p>
-        <p>Montant Repas : <br /><input type='text' name='mtRepas' required /></p>
-        <p>Montant Hébergement : <br /><input type='text' name='mtHebergement' required /></p>
-        <p><br /><input type='submit' name='submitAdd' value='Ajouter' /></p>
+        <p>Date : <br /><input type='date' class="logCSS" name='Date' required /></p>
+        <p>Trajet : <br /><input type='text' class="logCSS" name='Nom' required /></p>
+        <p>Nombre Kilomètre : <br /><input type='number' class="logCSS" name='nbKm' required /></p>
+        <p>Montant Péage : <br /><input type='number' class="logCSS" name='mtPeage' required /></p>
+        <p>Montant Repas : <br /><input type='number' class="logCSS" name='mtRepas' required /></p>
+        <p>Montant Hébergement : <br /><input type='number' class="logCSS" name='mtHebergement' required /></p>
+        <p><br /><input type='submit' class="button-3" name='submitAdd' value='Ajouter' /></p>
         <?php echo "<input type='text' name='id_note' style='display:none;' value='" . $id_note . "'>";
         echo "<input type='text' name='id_motif' style='display:none;' value='" . $idMotif . "'>"; ?>
     </form>

@@ -7,7 +7,6 @@ $laDATA = db_connect();
 $submitDelete = isset($_POST['submitDelete']);
 
 $id_ligne = isset($_POST['idLigne']) ? trim($_POST['idLigne']) : NULL;
-echo $id_ligne;
 
 $date = isset($_POST['Date']) ? trim($_POST['Date']) : NULL;
 $lib_trajet = isset($_POST['Nom']) ? trim($_POST['Nom']) : NULL;
@@ -53,22 +52,24 @@ if ($submitDelete) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styles.css">
     <title>Ajouter Ligne</title>
 </head>
 
 <body>
     <h1>Supprimer une ligne</h1>
+    <p>Retourner à l'<a href="../index.php">accueil</a></p>
 
     <form action='deleteFraisLigne.php' method='POST'>
-        <p>Date : <br /><input type='date' name='Date' value='<?php echo $date; ?>' disabled="disabled" /></p>
-        <p>Trajet : <br /><input type='text' name='Nom' value='<?php echo $lib_trajet; ?>' disabled="disabled" /></p>
-        <p>Nombre Kilomètre : <br /><input type='text' name='nbKm' value='<?php echo $nb_km; ?>' disabled="disabled" /></p>
-        <p>Montant Péage : <br /><input type='text' name='mtPeage' value='<?php echo $mt_peage; ?>' disabled="disabled" /></p>
-        <p>Montant Repas : <br /><input type='text' name='mtRepas' value='<?php echo $mt_repas; ?>' disabled="disabled" /></p>
-        <p>Montant Hébergement : <br /><input type='text' name='mtHebergement' value='<?php echo $mt_hebergement; ?>' disabled="disabled" /></p>
+        <p>Date : <br /><input type='date' class="logCSS" name='Date' value='<?php echo $date; ?>' disabled="disabled" /></p>
+        <p>Trajet : <br /><input type='text' class="logCSS" name='Nom' value='<?php echo $lib_trajet; ?>' disabled="disabled" /></p>
+        <p>Nombre Kilomètre : <br /><input type='number' class="logCSS" name='nbKm' value='<?php echo $nb_km; ?>' disabled="disabled" /></p>
+        <p>Montant Péage : <br /><input type='number' class="logCSS" name='mtPeage' value='<?php echo $mt_peage; ?>' disabled="disabled" /></p>
+        <p>Montant Repas : <br /><input type='number' class="logCSS" name='mtRepas' value='<?php echo $mt_repas; ?>' disabled="disabled" /></p>
+        <p>Montant Hébergement : <br /><input type='number' class="logCSS" name='mtHebergement' value='<?php echo $mt_hebergement; ?>' disabled="disabled" /></p>
         <input type='hidden' name='id_ligne' value='<?php echo $id_ligne; ?>' />
 
-        <p><br /><input type='submit' name='submitDelete' value='Supprimer' /></p>
+        <p><br /><input type='submit' class="button-3" name='submitDelete' value='Supprimer' /></p>
     </form>
 
 </body>
