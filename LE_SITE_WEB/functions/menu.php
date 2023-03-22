@@ -22,10 +22,10 @@ session_start();
       if ($_SESSION['roleid'] != 3) {
         echo "<li><a href='frais.php'>Mes notes de frais</a></li>";
       }
-      if ($_SESSION['roleid'] != 3) {
+      if ($_SESSION['roleid'] == 2) {
         echo "<li><a href='controleur.php'>Contrôleur</a></li>";
       }
-      echo "<li><a href=''>Bienvenue " . $_SESSION['pseudo'] . ", vous êtes connecté en tant que " . $_SESSION['rolelib'] . "</a></li>";
+      echo "<li style='width: 300px;'><a href='' style='padding-top: 11px;padding-bottom: 0px;'>Bienvenue " . $_SESSION['pseudo'] . ", vous êtes connecté en tant que " . $_SESSION['rolelib'] . "</a></li>";
       echo "<li><a href='deco.php'>Déconnexion</a></li>";
     } else {
       echo "<li><a href='connexion.php'>Connectez-vous</a></li>";
