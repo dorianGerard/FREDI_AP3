@@ -177,6 +177,17 @@ td.UserList2 {
   background: #d5eeff; 
 }
 
+.logCSS
+{
+  text-align: center;
+}
+
+input.logCSS {
+  /* width: 100%; */
+  padding: 12px 20px;
+  box-sizing: border-box;
+}
+
 /* CSS */
 .button-3 {
   appearance: none;
