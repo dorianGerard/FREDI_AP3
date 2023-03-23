@@ -42,7 +42,7 @@
 ### Utilisateurs dans la BDD
 
 <table>
-  <tr><th>Pseudo</th><th>Mot de passe</th><th>Email</th><th>Prénom</th><th>Nom</th><th>Nb Role</th></tr>
+  <tr><th>Pseudo</th><th>Mot de passe</th><th>Email</th><th>Prénom</th><th>Nom</th><th>Numéro rôle</th></tr>
   <tr><td>Darksasuke</td><td>Q8*h6n#tA5BVH$#*Pwjd</td><td>Darksasuke@gmail.com</td><td>Richard</td><td>Cuterrie</td><td>1</td></tr>
   <tr><td>Poney123</td><td>xiY#aaV$3ha_uu*Bj/4Oc</td><td>Poney123@gmail.com</td><td>Henry</td><td>Car</td><td>1</td></tr>
   <tr><td>DocteurSol</td><td>Orp_SP3h#w*/JVJu*_F6</td><td>DocteurSol@gmail.com</td><td>Khaoutar</td><td>Tiflette</td><td>1</td></tr>
