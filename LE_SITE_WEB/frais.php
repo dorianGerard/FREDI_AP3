@@ -5,8 +5,8 @@ session_start();
 $laDATA = db_connect();
 $submit = isset($_POST['submit']);
 
-// L’administrateur n’a pas accès aux notes.
-if ($_SESSION['roleid'] === 3) {
+// L’administrateur et le controleur n'ont pas le droit de créer de note de frais
+if ($_SESSION['roleid'] === 3 || $_SESSION['roleid'] === 2) {
     header("Location: index.php");
 }
 
@@ -130,15 +130,10 @@ $row = $result->fetchall(PDO::FETCH_ASSOC);
         }
         ?>
     </table>
-    <?php
-    if ($_SESSION['roleid'] === 1){
-        echo '<p>Ajouter une <a href="addFrais.php">note de frais</a></p>';
-    }
-    ?>
+    <p>Ajouter une <a href="addFrais.php">note de frais</a></p>
     <p>Obtenir le pdf <a href=" cumul_des_frais_pdf.php">du cumul des frais</a></p>
+    <p>Obtenir le <a href='bordereau_pdf.php'>Borderau</a> (connecté en tant que <?= $_SESSION['pseudo']?>)</p>
     <p>Aller à <a href="index.php">l'accueil</a></p>
-    <p>Obtenir le <a href='bordereau_pdf.php'>Borderau</a> (connecté en tant que <?= $_SESSION['pseudo']?>)</p>;
-
 </body>
 
 </html>
