@@ -46,14 +46,21 @@
     if(isset($_POST['submitNote']))
     {
         try {
+            // Récupère l'id de l'adhérent choisi par le controleur
             $sql = "SELECT id_utilisateur FROM utilisateur WHERE pseudo = :pseudo";
             $result = $laDATA->prepare($sql);
             $result->execute(array(":pseudo" => $_POST['user']));
             $id = $result->fetch(PDO::FETCH_ASSOC);
 
-            $sql = "SELECT * FROM note WHERE id_utilisateur = :id_utilisateur";
+            // Récupère l'id de la periode active
+            $sql = "SELECT id_periode FROM periode WHERE est_active = 1";
             $result = $laDATA->prepare($sql);
-            $result->execute(array(":id_utilisateur" => $id['id_utilisateur']));
+            $result->execute();
+            $idPeriode = $result->fetch(PDO::FETCH_ASSOC);
+
+            $sql = "SELECT * FROM note WHERE id_utilisateur = :id_utilisateur AND id_periode = :id_periode";
+            $result = $laDATA->prepare($sql);
+            $result->execute(array(":id_utilisateur" => $id['id_utilisateur'], ":id_periode" => $idPeriode['id_periode']));
             $row = $result->fetchAll(PDO::FETCH_ASSOC);
         } catch (PDOException $ex) {
             die("Erreur lors de la requête SQL : " . $ex->getMessage());
