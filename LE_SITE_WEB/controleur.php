@@ -91,7 +91,7 @@ foreach($periode as $periodes){
 
     if(isset($row[0]['lib_periode']))
     {
-        echo "<p>Notes de frais de la ".$row[0]['lib_periode']."</p>";
+        echo "<p>Notes de frais de l'année ".$row[0]['lib_periode'].".</p>";
     }
 
 ?>
@@ -197,7 +197,7 @@ foreach($periode as $periodes){
         }
         ?>
     </table>
-    <p>Obtenir le pdf <a href=" cumul_des_frais_pdf.php">du cumul des frais</a></p>
+    <p>Obtenir le pdf <a href='cumul_des_frais_pdf.php'>du cumul des frais</a></p>
     <p>Aller à <a href="index.php">l'accueil</a></p>
 </body>
 
