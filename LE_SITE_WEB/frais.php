@@ -10,8 +10,8 @@ if ($_SESSION['roleid'] === 3 || $_SESSION['roleid'] === 2) {
     header("Location: index.php");
 }
 
-// si c'est un utilisateur ou un controleur, alors on se limite à ses notes seulement
-if ($_SESSION['roleid'] != 3) {
+// si c'est un utilisateur, alors on se limite à ses notes seulement
+if ($_SESSION['roleid'] == 1) {
     $sql = "SELECT * FROM note, utilisateur WHERE note.id_utilisateur = :id_user
     AND note.id_utilisateur=utilisateur.id_utilisateur";
     $result = $laDATA->prepare($sql);

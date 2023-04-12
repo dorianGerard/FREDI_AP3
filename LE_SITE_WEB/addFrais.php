@@ -1,5 +1,10 @@
 <?php include "functions/dbconnect.php"; $laDATA = db_connect(); session_start(); $submit = isset($_POST['submit']);
 
+// L’administrateur et le controleur n'ont pas le droit de créer de note de frais
+if ($_SESSION['roleid'] === 3 || $_SESSION['roleid'] === 2) {
+    header("Location: index.php");
+}
+
 if ($submit)
 {
     $trajet = isset($_POST['lib_trajet']) ? trim($_POST['lib_trajet']) : NULL;
