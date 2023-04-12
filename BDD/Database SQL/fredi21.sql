@@ -30,7 +30,7 @@ USE fredi21;
 -- --------------------------------------------------------
 
 --
--- Table structure for table `adherent`
+-- Structure de la table `adherent`
 --
 
 CREATE TABLE `adherent` (
@@ -41,10 +41,10 @@ CREATE TABLE `adherent` (
   `adr3` varchar(50) DEFAULT NULL,
   `id_utilisateur` int(11) NOT NULL,
   `id_club` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Dumping data for table `adherent`
+-- Déchargement des données de la table `adherent`
 --
 
 INSERT INTO `adherent` (`id_adherent`, `nr_licence`, `adr1`, `adr2`, `adr3`, `id_utilisateur`, `id_club`) VALUES
@@ -60,7 +60,7 @@ INSERT INTO `adherent` (`id_adherent`, `nr_licence`, `adr1`, `adr2`, `adr3`, `id
 -- --------------------------------------------------------
 
 --
--- Table structure for table `club`
+-- Structure de la table `club`
 --
 
 CREATE TABLE `club` (
@@ -70,10 +70,10 @@ CREATE TABLE `club` (
   `adr2` varchar(50) DEFAULT NULL,
   `adr3` varchar(50) DEFAULT NULL,
   `id_ligue` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Dumping data for table `club`
+-- Déchargement des données de la table `club`
 --
 
 INSERT INTO `club` (`id_club`, `lib_club`, `adr1`, `adr2`, `adr3`, `id_ligue`) VALUES
@@ -91,14 +91,14 @@ INSERT INTO `club` (`id_club`, `lib_club`, `adr1`, `adr2`, `adr3`, `id_ligue`) V
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ligne`
+-- Structure de la table `ligne`
 --
 
 CREATE TABLE `ligne` (
   `id_ligne` int(11) NOT NULL,
   `date_ligne` date DEFAULT NULL,
   `lib_trajet` varchar(50) DEFAULT NULL,
-  `nb_km` int(11) DEFAULT NULL,
+  `nb_km` decimal(11,0) DEFAULT NULL,
   `mt_km` decimal(15,2) DEFAULT NULL,
   `mt_peage` decimal(15,2) DEFAULT NULL,
   `mt_repas` decimal(15,2) DEFAULT NULL,
@@ -107,19 +107,19 @@ CREATE TABLE `ligne` (
   `id_motif` int(11) NOT NULL,
   `id_note` int(11) NOT NULL,
   `id_periode` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Dumping data for table `ligne`
+-- Déchargement des données de la table `ligne`
 --
 
 INSERT INTO `ligne` (`id_ligne`, `date_ligne`, `lib_trajet`, `nb_km`, `mt_km`, `mt_peage`, `mt_repas`, `mt_hebergement`, `mt_total`, `id_motif`, `id_note`, `id_periode`) VALUES
-(34, '2022-12-21', 'Nancy - Metz', 98, '168.56', '78.00', '12.00', '3.00', '261.56', 14, 35, NULL),
-(35, '2022-12-28', 'Toulouse - Paris', 235, '404.20', '352.00', '35.00', '234.00', '1025.20', 14, 35, 4),
-(45, '2023-03-10', 'ouais', 152, '270.86', '15.00', '25.00', '150.00', '460.86', 14, 45, NULL);
+(34, '2022-12-21', 'Nancy - Metz', 98, 168.56, 78.00, 12.00, 3.00, 261.56, 14, 35, 2),
+(35, '2022-12-28', 'Toulouse - Paris', 235, 404.20, 352.00, 35.00, 234.00, 1025.20, 14, 35, 4),
+(45, '2023-03-10', 'Montauban - Toulouse', 152, 270.86, 15.00, 25.00, 150.00, 460.86, 14, 45, 3);
 
 --
--- Triggers `ligne`
+-- Déclencheurs `ligne`
 --
 DELIMITER $$
 CREATE TRIGGER `after_delete_ligne` AFTER DELETE ON `ligne` FOR EACH ROW BEGIN
@@ -217,16 +217,16 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ligue`
+-- Structure de la table `ligue`
 --
 
 CREATE TABLE `ligue` (
   `id_ligue` int(11) NOT NULL,
   `lib_ligue` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Dumping data for table `ligue`
+-- Déchargement des données de la table `ligue`
 --
 
 INSERT INTO `ligue` (`id_ligue`, `lib_ligue`) VALUES
@@ -239,32 +239,32 @@ INSERT INTO `ligue` (`id_ligue`, `lib_ligue`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `motif`
+-- Structure de la table `motif`
 --
 
 CREATE TABLE `motif` (
   `id_motif` int(11) NOT NULL,
   `lib_motif` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Dumping data for table `motif`
+-- Déchargement des données de la table `motif`
 --
 
 INSERT INTO `motif` (`id_motif`, `lib_motif`) VALUES
-(10, 'Motif 1'),
-(11, 'Motif 2'),
-(12, 'Motif 3'),
-(13, 'Motif 4'),
-(14, 'Motif 5'),
-(15, 'Motif 6'),
-(16, 'Motif 7'),
-(17, 'Motif 8');
+(10, 'Competition'),
+(11, 'Rassemblement'),
+(12, 'Spectacle'),
+(13, 'Achat materiel'),
+(14, 'Enseignement'),
+(15, 'Cours'),
+(16, 'Participation foire'),
+(17, 'Recrutement');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `note`
+-- Structure de la table `note`
 --
 
 CREATE TABLE `note` (
@@ -274,20 +274,20 @@ CREATE TABLE `note` (
   `dat_remise` date DEFAULT NULL,
   `id_periode` int(11) NOT NULL,
   `id_utilisateur` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Dumping data for table `note`
+-- Déchargement des données de la table `note`
 --
 
 INSERT INTO `note` (`id_note`, `est_valide`, `mt_total`, `dat_remise`, `id_periode`, `id_utilisateur`) VALUES
-(35, 0, '1287.00', '2022-12-21', 4, 2),
-(45, 1, '461.00', '2023-03-10', 3, 2);
+(35, 0, 1287.00, '2022-12-21', 4, 2),
+(45, 1, 461.00, '2023-03-10', 3, 2);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `periode`
+-- Structure de la table `periode`
 --
 
 CREATE TABLE `periode` (
@@ -295,38 +295,28 @@ CREATE TABLE `periode` (
   `lib_periode` varchar(50) DEFAULT NULL,
   `est_active` tinyint(1) NOT NULL DEFAULT 0,
   `mt_km` decimal(8,3) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Dumping data for table `periode`
+-- Déchargement des données de la table `periode`
 --
 
 INSERT INTO `periode` (`id_periode`, `lib_periode`, `est_active`, `mt_km`) VALUES
-(1, '2023', 0, '1.752'),
-(2, '2022', 0, '1.850'),
-(3, '2021', 0, '1.782'),
-(4, '2020', 1, '1.720'),
-(5, '2019', 0, '1.780'),
-(6, '2018', 0, '1.728'),
-(7, '2017', 0, '1.728'),
-(8, '2016', 0, '1.272'),
-(9, '2015', 0, '1.892'),
-(10, '2014', 0, '1.398');
+(1, '2023', 0, 175.280),
+(2, '2022', 0, 185.000),
+(3, '2021', 0, 178.200),
+(4, '2020', 1, 172.230),
+(5, '2019', 0, 178.000),
+(6, '2018', 0, 172.800),
+(7, '2017', 0, 245.000),
+(8, '2016', 0, 368.000),
+(9, '2015', 0, 213.000),
+(10, '2014', 0, 192.500);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `test`
---
-
-CREATE TABLE `test` (
-  `test` varchar(1000) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `utilisateur`
+-- Structure de la table `utilisateur`
 --
 
 CREATE TABLE `utilisateur` (
@@ -337,10 +327,10 @@ CREATE TABLE `utilisateur` (
   `nom` varchar(50) DEFAULT NULL,
   `prenom` varchar(50) DEFAULT NULL,
   `role` smallint(6) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Dumping data for table `utilisateur`
+-- Déchargement des données de la table `utilisateur`
 --
 
 INSERT INTO `utilisateur` (`id_utilisateur`, `pseudo`, `mdp`, `mail`, `nom`, `prenom`, `role`) VALUES
@@ -354,11 +344,11 @@ INSERT INTO `utilisateur` (`id_utilisateur`, `pseudo`, `mdp`, `mail`, `nom`, `pr
 (8, 'CookieVif', '$2y$10$5k8GZzA0drzIiqsT0IUQSer/tVQRxMiy1EuorH7sxZ0ohlzszhBKe', 'CookieVif@gmail.com', 'Vladimir', 'Aclette', 1);
 
 --
--- Indexes for dumped tables
+-- Index pour les tables déchargées
 --
 
 --
--- Indexes for table `adherent`
+-- Index pour la table `adherent`
 --
 ALTER TABLE `adherent`
   ADD PRIMARY KEY (`id_adherent`),
@@ -366,14 +356,14 @@ ALTER TABLE `adherent`
   ADD KEY `fk_id_club` (`id_club`);
 
 --
--- Indexes for table `club`
+-- Index pour la table `club`
 --
 ALTER TABLE `club`
   ADD PRIMARY KEY (`id_club`),
   ADD KEY `fk_id_ligue` (`id_ligue`);
 
 --
--- Indexes for table `ligne`
+-- Index pour la table `ligne`
 --
 ALTER TABLE `ligne`
   ADD PRIMARY KEY (`id_ligne`),
@@ -382,19 +372,19 @@ ALTER TABLE `ligne`
   ADD KEY `id_periode` (`id_periode`);
 
 --
--- Indexes for table `ligue`
+-- Index pour la table `ligue`
 --
 ALTER TABLE `ligue`
   ADD PRIMARY KEY (`id_ligue`);
 
 --
--- Indexes for table `motif`
+-- Index pour la table `motif`
 --
 ALTER TABLE `motif`
   ADD PRIMARY KEY (`id_motif`);
 
 --
--- Indexes for table `note`
+-- Index pour la table `note`
 --
 ALTER TABLE `note`
   ADD PRIMARY KEY (`id_note`),
@@ -402,88 +392,88 @@ ALTER TABLE `note`
   ADD KEY `fk_id_utilisateur` (`id_utilisateur`);
 
 --
--- Indexes for table `periode`
+-- Index pour la table `periode`
 --
 ALTER TABLE `periode`
   ADD PRIMARY KEY (`id_periode`);
 
 --
--- Indexes for table `utilisateur`
+-- Index pour la table `utilisateur`
 --
 ALTER TABLE `utilisateur`
   ADD PRIMARY KEY (`id_utilisateur`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT pour les tables déchargées
 --
 
 --
--- AUTO_INCREMENT for table `adherent`
+-- AUTO_INCREMENT pour la table `adherent`
 --
 ALTER TABLE `adherent`
   MODIFY `id_adherent` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
--- AUTO_INCREMENT for table `club`
+-- AUTO_INCREMENT pour la table `club`
 --
 ALTER TABLE `club`
   MODIFY `id_club` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT for table `ligne`
+-- AUTO_INCREMENT pour la table `ligne`
 --
 ALTER TABLE `ligne`
   MODIFY `id_ligne` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
--- AUTO_INCREMENT for table `ligue`
+-- AUTO_INCREMENT pour la table `ligue`
 --
 ALTER TABLE `ligue`
   MODIFY `id_ligue` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `motif`
+-- AUTO_INCREMENT pour la table `motif`
 --
 ALTER TABLE `motif`
   MODIFY `id_motif` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
--- AUTO_INCREMENT for table `note`
+-- AUTO_INCREMENT pour la table `note`
 --
 ALTER TABLE `note`
   MODIFY `id_note` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
--- AUTO_INCREMENT for table `periode`
+-- AUTO_INCREMENT pour la table `periode`
 --
 ALTER TABLE `periode`
   MODIFY `id_periode` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT for table `utilisateur`
+-- AUTO_INCREMENT pour la table `utilisateur`
 --
 ALTER TABLE `utilisateur`
   MODIFY `id_utilisateur` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
--- Constraints for dumped tables
+-- Contraintes pour les tables déchargées
 --
 
 --
--- Constraints for table `adherent`
+-- Contraintes pour la table `adherent`
 --
 ALTER TABLE `adherent`
   ADD CONSTRAINT `fk_id_club` FOREIGN KEY (`id_club`) REFERENCES `club` (`id_club`),
   ADD CONSTRAINT `fk_id_utilisateur2` FOREIGN KEY (`id_utilisateur`) REFERENCES `utilisateur` (`id_utilisateur`) ON DELETE CASCADE;
 
 --
--- Constraints for table `club`
+-- Contraintes pour la table `club`
 --
 ALTER TABLE `club`
   ADD CONSTRAINT `fk_id_ligue` FOREIGN KEY (`id_ligue`) REFERENCES `ligue` (`id_ligue`);
 
 --
--- Constraints for table `ligne`
+-- Contraintes pour la table `ligne`
 --
 ALTER TABLE `ligne`
   ADD CONSTRAINT `fk_id_motif` FOREIGN KEY (`id_motif`) REFERENCES `motif` (`id_motif`),
@@ -491,7 +481,7 @@ ALTER TABLE `ligne`
   ADD CONSTRAINT `ligne_ibfk_1` FOREIGN KEY (`id_periode`) REFERENCES `periode` (`id_periode`);
 
 --
--- Constraints for table `note`
+-- Contraintes pour la table `note`
 --
 ALTER TABLE `note`
   ADD CONSTRAINT `fk_id_periode` FOREIGN KEY (`id_periode`) REFERENCES `periode` (`id_periode`),
@@ -501,3 +491,4 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
