@@ -102,21 +102,22 @@ if ($submit) {
 <html lang="fr">
     <head>
         <meta charset="utf-8" />
-	    <link rel="stylesheet" href="css/style.css">
+	    <link rel="stylesheet" href="css/styles.css">
         <title>Inscription</title>
     </head>
 
     <body>
+    <div class="logCSS">
         <h1><p>Creer son compte</p></h1>
         <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
-            <p>Prénom : <input type="text" name="prenom" required></p>
-            <p>Nom : <input type="text" name="nom" required></p>
-            <p>Nom d'utilisateur : <input type="text" name="Username" required></p>
-            <p>E-mail : <input type="text" name="email" required></p>
-            <p>Adresse : <input type="text" name="adresse1" required></p>
-            <p>Adresse N°2 : <input type="text" name="adresse2"></p>
-            <p>Complèment d'adresse : <input type="text" name="adresseC"></p>
-            <p>Choix du club : <select name="ligue_user" required>
+            <p><input class="logCSS" type="text" name="prenom" placeholder="Prénom" required></p>
+            <p><input class="logCSS" type="text" name="nom" placeholder="Nom" required></p>
+            <p><input class="logCSS" type="text" name="Username" placeholder="Nom d'utilisateur" required></p>
+            <p><input class="logCSS" type="text" name="email" placeholder="Email" required></p>
+            <p><input class="logCSS" type="text" name="adresse1" placeholder="Adresse" required></p>
+            <p><input class="logCSS" type="text" name="adresse2" placeholder="Adresse N°2"></p>
+            <p><input class="logCSS" type="text" name="adresseC" placeholder="Complèment d'adresse"></p>
+            <p><select name="ligue_user" required>
                 <option value="1">Club de Foot de Nancy</option>
                 <option value="2">Club de Foot de Metz</option>
                 <option value="3">Club de Handball de Lunéville</option>
@@ -129,11 +130,13 @@ if ($submit) {
                 <option value="10">Club de Rugby de Bitche</option>
                 </select><br/>
             </p>
-            <p>Numéro de license: <input type="text" name="Nlicense" required></p>
-            <p>Mot de passe : <input type="password" name="mdp" required></p>
-            <p>Confirmation du mot de passe : <input type="password" name="confirmMDP" required></p>
-            <p>Déjà un compte ? <a href="connexion.php">Se connecter</a></p>
-            <div class="BottonLa"><p><input type="submit" name="submit" value="Inscription"> <input type="reset" value="Reset"> </p></div>
+            <p><input class="logCSS" type="text" name="Nlicense" placeholder="Numéro de license" required></p>
+            <p><input class="logCSS" type="password" name="mdp" placeholder="Mot de passe" required></p>
+            <p><input class="logCSS" type="password" name="confirmMDP" placeholder="Retapez mot de passe" required></p>
+            <div class="BottonLa"><p><input class="button-3" type="submit" name="submit" value="Inscription"> <input class="button-3" type="reset" value="Reset"> </p></div>
         </form>
+        <p>Déjà un compte ? <a href="connexion.php">Se connecter</a></p>
+        <p>Revenir au menu <a href="index.php">principal</a>.</p>
+    </div>
     </body>
 </html>

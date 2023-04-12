@@ -13,7 +13,7 @@ $submit = isset($_POST['submit']);
 // Check dans la base
 if ($submit) {
   // Formulaire validé
-  $sql = "SELECT * FROM utilisateur WHERE mail = :email "; //on prepare la requete, cette requete verfie si un utilisateur dans la base correspond au mail rentré
+  $sql = "SELECT mail FROM utilisateur WHERE mail = :email "; //on prepare la requete, cette requete verfie si un utilisateur dans la base correspond au mail rentré
   try {
     $sth = $dbh->prepare($sql);
     $sth->execute(array(":email" => $email));
@@ -21,7 +21,7 @@ if ($submit) {
   } catch (PDOException $e) {
     die("<p>Erreur lors de la requête SQL : " . $e->getMessage() . "</p>");
   }
-  if ($row['mail'] === $email) { //si la mail correspond alors on renvoie un nouveau mdp
+  if (!empty($row) && isset($row['mail'])) { //si la mail correspond alors on renvoie un nouveau mdp
 
     // on genere un nouveau mot de passe
     $newPassword = getRandomPassword();
@@ -36,16 +36,16 @@ if ($submit) {
       die("<p>Erreur lors de la requête SQL : " . $e->getMessage() . "</p>");
     }
 
-    $message = "Votre nouveau de passe est: <span style='color: blue;'>" . $newPassword . "</span>";
+    $message = "Votre nouveau mot de passe est: <span style='color: blue;'>" . $newPassword . "</span>";
 
     // écriture dans les logs
     $log = "Nouveau mdp assigné pour " . $row['mail'] . ": " . $newPassword . "\n";
     write_in_logs($log);
   } else {
     // sinon cela signifie qu'aucun compte avec cette adresse mail n'existe
-    $message = "Le mail tapé ne correspond pas.";
+    $message = "L'adresse Email tapé ne correspond pas.";
     // écriture dans les logs
-    $log = "Tentative de récuperation de mpd échoué avec l'adresse: " . $email . "\n";
+    $log = "Tentative de récuperation de mot de passe échoué avec l'adresse: " . $email . "\n";
     write_in_logs($log);
   }
 } else {
@@ -54,7 +54,7 @@ if ($submit) {
 
 function getRandomPassword()
 {
-  $alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
+  $alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890$!*';
   $pass = array();
   $alphaLength = strlen($alphabet) - 1;
   for ($i = 0; $i < 16; $i++) {
@@ -78,15 +78,15 @@ function getRandomPassword()
 </head>
 
 <body>
-  <h1>Mot de passse oublié</h1>
-  <p><?php echo $message; ?></p>
-  <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-    <p>Adresse E-mail<br />
-      <input name="email" id="email" type="text" value="" />
-    </p>
-    <p><a href="index.php">Retour</a></p>
-    <p><input type="submit" name="submit" value="Confirmer" />&nbsp;<input type="reset" value="Réinitialiser" /></p>
-  </form>
+  <div class="logCSS">
+    <h1>Mot de passse oublié</h1>
+    <p><?php echo $message; ?></p>
+    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+      <input class="logCSS" name="email" id="email" type="text" placeholder="Adresse Email" />
+      <p><input class="button-3" type="submit" name="submit" value="Confirmer" />&nbsp;<input class="button-3" type="reset" value="Réinitialiser" /></p>
+    </form>
+    <p>Retour a l'<a href="index.php">accueil</a></p>
+  </div>
 </body>
 
 </html>

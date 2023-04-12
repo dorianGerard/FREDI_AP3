@@ -29,7 +29,7 @@ if ($submit) {
     // Si id_utilisateur retourne NULL, alors le Pseudo existe pas dans la BDD
     if($id_user == NULL){
         echo "Pseudo inconnu";
-        // Faire une truc pour arreter le code PHP ICI
+        //! Faire une truc pour arreter le code PHP ICI
     }
 
     // On récupère le mot de passe hashé de l'utilisateur concerné
@@ -106,8 +106,10 @@ if ($submit) {
         <form action="<?php $_SERVER['PHP_SELF'] ?>" method=POST>
             <p><br /><input class="logCSS" name="pseudo" placeholder="Pseudo" id="pseudo" type="text" required /></p>
             <p><br /><input class="logCSS" name="mdp" placeholder="Mot de passe" id="mdp" type="password" required /></p>
-            <p><input class="button-3" style="background-color: #ff895d;" type="submit" name="submit" value="Se connecter" />&nbsp;<input class="button-3" style="background-color: #ff895d;" type="reset" value="Se créer un compte" /></p>
+            <p><input class="button-3" style="background-color: #ff895d;" type="submit" name="submit" value="Se connecter" />&nbsp;<a href="inscription.php"><input class="button-3" style="background-color: #ff895d;" type="button" value="Se créer un compte" /></a></p>
         </form>
+        <p>Mot de passe <a href="forgetPW.php">oublié</a> ?</p>
+        <p>Revenir au menu <a href="index.php">principal</a>.</p>
   </div>
 </body>
 </html>
