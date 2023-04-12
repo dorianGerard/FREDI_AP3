@@ -7,7 +7,7 @@ $laDATA = db_connect();
 $submit = isset($_POST['submit']);
 
 // L’administrateur n’a pas accès aux notes.
-if ($_SESSION['roleid'] === 3) {
+if ($_SESSION['roleid'] === 3 || $_SESSION['roleid'] === 1) {
     header("Location: index.php");
 }
 
