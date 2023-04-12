@@ -4,6 +4,13 @@ include "../functions/dbconnect.php";
 session_start();
 $laDATA = db_connect();
 
+if ($_SESSION['roleid'] === 3 || $_SESSION['roleid'] === 2) {
+    header("Location: index.php");
+}
+if(!isset($_POST['Delete'])) {
+    header("Location: ../index.php");
+}
+
 $submitDelete = isset($_POST['submitDelete']);
 
 $id_ligne = isset($_POST['idLigne']) ? trim($_POST['idLigne']) : NULL;

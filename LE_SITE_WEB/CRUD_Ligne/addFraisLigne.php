@@ -4,6 +4,13 @@ include "../functions/dbconnect.php";
 session_start();
 $laDATA = db_connect();
 
+if ($_SESSION['roleid'] === 3 || $_SESSION['roleid'] === 2) {
+    header("Location: index.php");
+}
+if(!isset($_POST['add'])) {
+    header("Location: ../index.php");
+}
+
 $submitAdd = isset($_POST['submitAdd']);
 
 $id_note = isset($_POST['id_note']) ? trim($_POST['id_note']) : NULL; 

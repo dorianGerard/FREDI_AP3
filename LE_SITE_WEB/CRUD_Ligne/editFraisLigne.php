@@ -5,6 +5,10 @@
     $laDATA = db_connect();
     $submit = isset($_POST['edit']);
     $submitEdit = isset($_POST['submitEdit']);
+
+    if ($_SESSION['roleid'] === 3 || $_SESSION['roleid'] === 2) {
+        header("Location: index.php");
+    }
  
 ?>
 <!DOCTYPE html>
