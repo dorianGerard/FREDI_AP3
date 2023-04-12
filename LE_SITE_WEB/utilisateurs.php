@@ -7,6 +7,10 @@
     //connexion à la bdd
     $dbh=db_connect();
 
+if ($_SESSION['roleid'] === 1 || $_SESSION['roleid'] === 2) {
+    header("Location: index.php");
+}
+
 //récupération de la liste des utilisateurs et de leurs role
     $sql = 'select * from utilisateur';
     try {
