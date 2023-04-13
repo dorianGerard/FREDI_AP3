@@ -4,10 +4,24 @@
 
 ## 🔍 - Vous y trouverez :
 
+* Des instructions concernant l'installation du projet
 * Un lien vers le Trello du projet
 * Le site en lui-même en HTML/CSS/PHP
 * La base de donnée, ses données associées, ainsi que des screenshots des MCD/MLD
 * L'IHM en diffèrents formats, crée avec Balsamiq
+
+-----
+
+## ⌨ - Installation :
+
+<ol>
+  <li>Allez sur <a href="https://trello.com/b/ds9X1op6/to-do](https://github.com/dorianGerard/FREDI_AP3.git">
+    le lien du projet 
+  </a>
+    </li>
+  <li>2 = Controleur</li>
+  <li>3 = Admin</li>
+</ol>
 
 -----
 
