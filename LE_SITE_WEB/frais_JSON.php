@@ -42,11 +42,20 @@ if (password_verify($password, $hashedPassword)) {
     } catch (PDOException $ex) {
         $errorSql = $ex->getMessage();
     }
-    $periode = array(
-        "libelle" => $rows['lib_periode'],
-        "montant" => $rows['mt_km'],
-        "statut" => $rows['est_active']
-    );
+    // if ($rows != NULL) {
+    //     $periode = array(
+    //         "libelle" => $rows['lib_periode'],
+    //         "montant" => $rows['mt_km'],
+    //         "statut" => $rows['est_active']
+    //     );
+    // }
+
+    $periode = array();
+    if ($rows != NULL) {
+        $periode["libelle"] = $rows['lib_periode'];
+        $periode["montant"] = $rows['mt_km'];
+        $periode["statut"] = $rows['est_active'];
+    }
 
     // on construit la partie du tableau concernant les lignes
     $sql = "SELECT id_ligne, date_ligne, mt_peage, mt_repas, mt_hebergement, mt_km, id_motif, nb_km, lib_trajet, L.mt_total FROM ligne L, note WHERE L.id_note = note.id_note AND note.id_utilisateur = :userid";
@@ -105,8 +114,7 @@ if (password_verify($password, $hashedPassword)) {
     // écriture dans les logs
     $log = "Génération du JSON des notes de frais.\n";
     write_in_logs($log);
-}
-else {
+} else {
     $fraisArray = array(
         "message" => "KO : erreur sur le mdp",
     );
