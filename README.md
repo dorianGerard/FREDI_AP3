@@ -59,3 +59,5 @@
 
 Pour récupérer les note de frais:
 [...]/frais_JSON.php?email=<EMAIL_UTILISATEUR>&password=<MOT_DE_PASSE>
+Exemple:
+[...]/frais_JSON.php?email=Darksasuke@gmail.com&password=UxdZKgaes4GjLH0HjSjNNF
