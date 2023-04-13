@@ -15,12 +15,9 @@
 ## ⌨ - Installation :
 
 <ol>
-  <li>Allez sur <a href="https://trello.com/b/ds9X1op6/to-do](https://github.com/dorianGerard/FREDI_AP3.git">
-    le lien du projet 
-  </a>
-    </li>
-  <li>2 = Controleur</li>
-  <li>3 = Admin</li>
+  <li>Allez sur <a href="https://github.com/dorianGerard/FREDI_AP3.git">le lien du projet</a> et téléchargez le projet au format .ZIP </li>
+  <li>Décompresser le .ZIP dans votre dossier XAMPP, où se trouve l'emsemble de vos projets</li>
+  <li>Importez la BDD: ouvrez [...]/BDD/Database SQL/fredi21.sql et executez le contenu du fichier SQL dans phpMyAdmin afin d'importer la structure et les données de la base</li>
 </ol>
 
 -----
